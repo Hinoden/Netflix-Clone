@@ -13,10 +13,10 @@ export async function searchPerson(req, res){
         await User.findByIdAndUpdate(req.user._id, {
             $push:{
                 searchHistory:{
-                    id:response.results[0].id,
-                    image:response.results[0].profile_path,
-                    title:response.results[0].name,
-                    searchType:"person",
+                    id: response.results[0].id,
+                    image: response.results[0].profile_path,
+                    title: response.results[0].name,
+                    searchType: "person",
                     createdAt: new Date(),
                 },
             },
@@ -40,17 +40,17 @@ export async function searchMovie(req, res){
 
         await User.findByIdAndUpdate(req.user._id, {
             $push:{
-                searchHistory:{
-                    id:response.results[0].id,
-                    image:response.results[0].poster_path,
-                    title:response.results[0].title,
-                    searchType:"movie",
+                searchHistory: {
+                    id: response.results[0].id,
+                    image: response.results[0].poster_path,
+                    title: response.results[0].title,
+                    searchType: "movie",
                     createdAt: new Date(),
                 },
             },
         });
 
-        res.status(200).json({success: true, content:response.results});
+        res.status(200).json({success: true, content: response.results});
 
     } catch (error) {
         console.log("Error in searchMovie controller: ", error.message);
