@@ -15,7 +15,8 @@ const PORT = ENV_VARS.PORT;
 const __dirname = path.resolve();
 app.use(express.json());        //allows us to parse req.body
 app.use(cors({
-    origin: ['https://netflix-clone-black-two.vercel.app']
+    origin: ['https://netflix-clone-black-two.vercel.app'],
+    methods: ["GET", "POST", "DELETE"],
 }));
 app.use(cookieParser());
 
