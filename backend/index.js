@@ -10,7 +10,7 @@ import {ENV_VARS} from './config/envVars.js';
 import {connectDB} from './config/db.js';
 
 const app = express();
-const PORT = process.env.PORT || ENV_VARS.PORT;
+const PORT = ENV_VARS.PORT;
 const __dirname = path.resolve();
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
