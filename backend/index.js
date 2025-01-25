@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import path from "path";
 import {protectRoute} from "./middleware/protectRoute.js";
@@ -13,6 +14,9 @@ const app = express();
 const PORT = ENV_VARS.PORT;
 const __dirname = path.resolve();
 app.use(express.json());        //allows us to parse req.body
+app.use(cors({
+    origin: ['https://netflix-clone-black-two.vercel.app']
+}));
 app.use(cookieParser());
 
 //connect to the auth routes depending on which page is visited
