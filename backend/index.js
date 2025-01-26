@@ -22,18 +22,31 @@ app.use(cors({
 app.use(cookieParser());
 
 //connect to the auth routes depending on which page is visited
-app.use("https://netflix-clone-black-two.vercel.app/auth", authRoutes);
+app.use("/backend/v1/auth", authRoutes);
 app.use("/api/v1/movie", protectRoute, movieRoutes);
 app.use("/api/v1/tv", protectRoute, tvRoutes);
 app.use("/api/v1/search", protectRoute, searchRoutes);
 
-if (ENV_VARS.NODE_ENV === "production"){
+// if (ENV_VARS.NODE_ENV === "production"){
+//     app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+//     })
+// }
+
+if (ENV_VARS.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+    app.get("/backend/v1/*", (req, res) => {
+        res.status(404).send("API route not found");
+    });
 
     app.get("*", (req, res) => {
         res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-    })
+    });
 }
+
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
