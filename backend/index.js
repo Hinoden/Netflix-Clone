@@ -22,7 +22,7 @@ app.use(cors({
 app.use(cookieParser());
 
 //connect to the auth routes depending on which page is visited
-app.use("/auth", authRoutes);
+app.use("https://netflix-clone-black-two.vercel.app/auth", authRoutes);
 app.use("/api/v1/movie", protectRoute, movieRoutes);
 app.use("/api/v1/tv", protectRoute, tvRoutes);
 app.use("/api/v1/search", protectRoute, searchRoutes);
