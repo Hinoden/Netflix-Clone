@@ -21,7 +21,7 @@ app.use(cors({
 app.use(cookieParser());
 
 //connect to the auth routes depending on which page is visited
-app.use("/api/v1/auth", authRoutes);
+app.use("/auth", authRoutes);
 app.use("/api/v1/movie", protectRoute, movieRoutes);
 app.use("/api/v1/tv", protectRoute, tvRoutes);
 app.use("/api/v1/search", protectRoute, searchRoutes);
