@@ -8,7 +8,7 @@ const AuthScreen = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        navigate("https://netflix-clone-black-two.vercel.app/signup?email=" + email);
+        navigate("/signup?email=" + email);
     }
     return (
         <div className='hero-bg relative'>
