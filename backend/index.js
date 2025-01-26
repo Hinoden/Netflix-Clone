@@ -17,6 +17,7 @@ app.use(express.json());        //allows us to parse req.body
 app.use(cors({
     origin: ['https://netflix-clone-black-two.vercel.app'],
     methods: ["GET", "POST", "DELETE"],
+    credentials: true
 }));
 app.use(cookieParser());
 
