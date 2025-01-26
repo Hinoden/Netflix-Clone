@@ -17,7 +17,7 @@ const MovieSlider = ({category}) => {
 
     useEffect(() => {
         const getContent = async () => {
-            const res = await axios.get(`/api/v1/${contentType}/${category}`);
+            const res = await axios.get(`https://netflix-clone-black-two.vercel.app/api/v1/${contentType}/${category}`);
             setContent(res.data.content);
         };
 
@@ -44,7 +44,7 @@ const MovieSlider = ({category}) => {
             </h2>
             <div className='flex space-x-4 overflow-x-scroll scrollbar-hide' ref={sliderRef}>
                 {content.map((item) => (
-                    <Link to={`/watch/${item.id}`} className='min-w-[250px] relative group' key={item.id}>
+                    <Link to={`https://netflix-clone-black-two.vercel.app/watch/${item.id}`} className='min-w-[250px] relative group' key={item.id}>
                         <div className='rounded-lg overflow-hidden'>
                             <img src={SMALL_IMG_BASE_URL + item.backdrop_path} alt="Movie image" 
                                 className='transition-transform duration-300 ease-in-out group-hover:scale-125'
