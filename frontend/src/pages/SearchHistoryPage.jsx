@@ -22,7 +22,7 @@ const SearchHistoryPage = () => {
     useEffect(() => {
         const getSearchHistory = async () => {
             try {
-                const res = await axios.get(`https://netflix-clone-black-two.vercel.app/api/v1/search/history`);
+                const res = await axios.get(`https://netflix-clone-black-two.vercel.app/search/history`);
                 setSearchHistory(res.data.content);
             } catch (error) {
                 setSearchHistory([]);
@@ -33,7 +33,7 @@ const SearchHistoryPage = () => {
 
     const handleDelete = async (entry) => {
         try{
-            await axios.delete(`https://netflix-clone-black-two.vercel.app/api/v1/search/history/${entry.id}`);
+            await axios.delete(`https://netflix-clone-black-two.vercel.app/search/history/${entry.id}`);
             setSearchHistory(searchHistory.filter((item) => item.id !== entry.id));
         } catch (error){
             toast.error("Failed to delete search item");

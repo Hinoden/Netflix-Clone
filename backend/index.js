@@ -23,9 +23,9 @@ app.use(cookieParser());
 
 //connect to the auth routes depending on which page is visited
 app.use("/auth", authRoutes);
-app.use("/api/v1/movie", protectRoute, movieRoutes);
-app.use("/api/v1/tv", protectRoute, tvRoutes);
-app.use("/api/v1/search", protectRoute, searchRoutes);
+app.use("/movie", protectRoute, movieRoutes);
+app.use("/tv", protectRoute, tvRoutes);
+app.use("/search", protectRoute, searchRoutes);
 
 // if (ENV_VARS.NODE_ENV === "production"){
 //     app.use(express.static(path.join(__dirname, "/frontend/dist")));

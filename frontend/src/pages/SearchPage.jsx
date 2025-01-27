@@ -23,7 +23,7 @@ const SearchPage = () => {
     const handleSearch = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.get(`https://netflix-clone-black-two.vercel.app/api/v1/search/${activeTab}/${searchTerm}`);
+            const res = await axios.get(`https://netflix-clone-black-two.vercel.app/search/${activeTab}/${searchTerm}`);
             setResults(res.data.content);
         } catch (error) {
             if(error.response.status === 404){
