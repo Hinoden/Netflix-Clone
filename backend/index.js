@@ -9,14 +9,18 @@ import tvRoutes from "./routes/tv.route.js";
 import searchRoutes from "./routes/search.route.js";
 import {ENV_VARS} from './config/envVars.js';
 import {connectDB} from './config/db.js';
+import {fileURLToPath} from 'url';
+import path from 'path';
 
 const app = express();
 const PORT = process.env.PORT || ENV_VARS.PORT;
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+// const __dirname = path.resolve();
 app.use(express.json());        //allows us to parse req.body
 app.use(cors({
     origin: ["https://netflix-clone-black-two.vercel.app"],
-    methods: ["GET", "POST", "DELETE"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true
 }));
 app.use(cookieParser());
