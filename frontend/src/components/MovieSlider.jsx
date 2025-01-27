@@ -17,7 +17,7 @@ const MovieSlider = ({category}) => {
 
     useEffect(() => {
         const getContent = async () => {
-            const res = await axios.get(`https://netflix-clone-black-two.vercel.app/api/v1/${contentType}/${category}`);
+            const res = await axios.get(`https://netflix-clone-black-two.vercel.app/${contentType}/${category}`);
             setContent(res.data.content);
         };
 
