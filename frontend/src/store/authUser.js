@@ -11,7 +11,7 @@ export const useAuthStore = create((set) => ({
     signup: async (credentials) => {
         set({isSigningUp:true});
         try {
-            const response = await axios.post("https://netflix-clone-api-kohl.vercel.app/api/auth/signup", credentials);
+            const response = await axios.post("https://netflix-clone-api-kohl.vercel.app/auth/signup", credentials);
             set({user:response.data.user, isSigningUp: false});
             toast.success("Account created successfully");
         } catch (error) {
@@ -43,7 +43,7 @@ export const useAuthStore = create((set) => ({
     authCheck: async () => {
         set({isCheckingAuth: true});
         try{
-            const response = await axios.get("https://netflix-clone-api-kohl.vercel.app/api/auth/authCheck");
+            const response = await axios.get("https://netflix-clone-api-kohl.vercel.app/auth/authCheck");
             set({user: response.data.user, isCheckingAuth: false});
         } catch (error){
             set({ isCheckingAuth: false, user: null});
