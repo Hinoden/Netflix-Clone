@@ -22,7 +22,7 @@ app.use(cors({
 app.use(cookieParser());
 
 //connect to the auth routes depending on which page is visited
-app.use("/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/movie", protectRoute, movieRoutes);
 app.use("/tv", protectRoute, tvRoutes);
 app.use("/search", protectRoute, searchRoutes);
