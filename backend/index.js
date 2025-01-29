@@ -20,13 +20,22 @@ const __dirname = path.dirname(__filename);
 app.use(cors({
     origin: ["https://netflix-clone-black-two.vercel.app"],
     methods: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
 
-app.options("*", cors());
+//preflight
+app.options("*", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "https://netflix-clone-black-two.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.sendStatus(200);
+});
+
 
 //connect to the auth routes depending on which page is visited
 app.use("/auth", authRoutes);
