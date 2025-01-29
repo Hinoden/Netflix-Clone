@@ -10,7 +10,7 @@ import searchRoutes from "./routes/search.route.js";
 import {ENV_VARS} from './config/envVars.js';
 import {connectDB} from './config/db.js';
 import {fileURLToPath} from 'url';
-import path from 'path';
+// import path from 'path';
 
 const app = express();
 const PORT = process.env.PORT || ENV_VARS.PORT;
