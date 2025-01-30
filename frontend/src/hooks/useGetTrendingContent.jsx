@@ -8,7 +8,7 @@ const useGetTrendingContent = () => {
 
     useEffect(() => {
         const getTrendingContent = async () => {
-            const res = await axios.get(`https://netflix-clone-black-two.vercel.app/api/${contentType}/trending`);
+            const res = await axios.get(`https://netflix-clone-api-xi.vercel.api/api/${contentType}/trending`);
             setTrendingContent(res.data.content);
         };
 
