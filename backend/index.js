@@ -14,19 +14,11 @@ const PORT = ENV_VARS.PORT
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
 
-// app.use(cors({
-//     origin: 'https://netflix-clone-lemon-theta.vercel.app',
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,       //allows cookies to be enabled
-// }));
-
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://netflix-clone-lemon-theta.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Credentials", "true");
-    next();
-});
-
+app.use(cors({
+    origin: 'https://netflix-clone-lemon-theta.vercel.app',
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,       //allows cookies to be enabled
+}));
 
 app.get("/", (req, res) => {
     res.json("Backend stuff :)");
