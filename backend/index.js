@@ -15,7 +15,7 @@ app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
 
 app.use(cors({
-    origin: ['https://netflix-clone-lemon-theta.vercel.app'],
+    origin: 'https://netflix-clone-lemon-theta.vercel.app',
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,       //allows cookies to be enabled
 }));
