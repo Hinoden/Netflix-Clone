@@ -15,7 +15,7 @@ const LoginPage = () => {
     return (
     <div className='h-screen w-full hero-bg'>
         <header className='max-w-6xl mx-auto flex items-center justify-between p-4'>
-            <Link to={"/"}>
+            <Link to={"https://netflix-clone-black-two.vercel.app/"}>
                 <img src="/netflix-logo.png" alt="logo" className='w-52' />
             </Link>
         </header>
@@ -60,7 +60,7 @@ const LoginPage = () => {
 
                 <div className='text-center text-gray-400'>
                     Don't have an account?{" "}
-                    <Link to={"/signup"} className='text-red-500 hover:underline'>Sign Up</Link>
+                    <Link to={"https://netflix-clone-black-two.vercel.app/signup"} className='text-red-500 hover:underline'>Sign Up</Link>
                 </div>
             </div>
         </div>
