@@ -20,6 +20,10 @@ app.use(cors({
     credentials: true,       //allows cookies to be enabled
 }));
 
+app.get("/", (req, res) => {
+    res.json("Backend stuff :)");
+});
+
 //connect to the auth routes depending on which page is visited
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/movie", protectRoute, movieRoutes);
