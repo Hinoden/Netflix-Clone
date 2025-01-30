@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import {protectRoute} from "./middleware/protectRoute.js";
 import authRoutes from "./routes/auth.route.js";
@@ -12,6 +13,12 @@ const app = express();
 const PORT = ENV_VARS.PORT
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
+
+app.use(cors({
+    origin: ['https://netflix-clone-lemon-theta.vercel.app'],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,       //allows cookies to be enabled
+}));
 
 //connect to the auth routes depending on which page is visited
 app.use("/api/v1/auth", authRoutes);
