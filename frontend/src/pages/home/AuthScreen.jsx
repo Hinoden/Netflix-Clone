@@ -61,7 +61,7 @@ const AuthScreen = () => {
                             playsInline
                             autoPlay={true}
                             muted
-                            Loop
+                            loop
                         >
                             <source src='/hero-vid.m4v' type='video/mp4' />
                         </video>
@@ -126,7 +126,7 @@ const AuthScreen = () => {
                             playsInline
                             autoPlay={true}
                             muted
-                            Loop
+                            loop
                         >
                             <source src='/video-devices.m4v' type='video/mp4' />
                         </video>
