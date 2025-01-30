@@ -38,7 +38,7 @@ const WatchPage = () => {
     useEffect(() => {
         const getSimilarContent = async () => {
             try {
-                const res = await axios.get(`https://netflix-clone-black-two.vercel.app/${contentType}/${id}/similar`);
+                const res = await axios.get(`https://netflix-clone-api-xi.vercel.api/${contentType}/${id}/similar`);
                 setSimilarContent(res.data.similar);
             } catch (error) {
                 if (error.message.includes('404')){
@@ -53,7 +53,7 @@ const WatchPage = () => {
     useEffect(() => {
         const getContentDetails = async () => {
             try {
-                const res = await axios.get(`https://netflix-clone-black-two.vercel.app/${contentType}/${id}/details`);
+                const res = await axios.get(`https://netflix-clone-api-xi.vercel.api/${contentType}/${id}/details`);
                 setContent(res.data.content);
             } catch (error) {
                 if (error.message.includes('404')){
