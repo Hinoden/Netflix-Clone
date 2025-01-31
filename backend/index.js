@@ -22,6 +22,8 @@ app.use(cors({
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
 
+app.options('*', cors());  // ✅ Handles preflight requests
+
 app.get("/", (req, res) => {
     res.json("Backend stuff :)");
 });
