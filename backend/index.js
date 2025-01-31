@@ -11,8 +11,6 @@ import {connectDB} from './config/db.js';
 
 const app = express();
 const PORT = ENV_VARS.PORT
-app.use(express.json());        //allows us to parse req.body
-app.use(cookieParser());
 
 app.use(cors({
     origin: 'https://netflix-clone-lemon-theta.vercel.app',
@@ -20,8 +18,19 @@ app.use(cors({
     credentials: true,       //allows cookies to be enabled
 }));
 
+app.use(express.json());        //allows us to parse req.body
+app.use(cookieParser());
+
 app.get("/", (req, res) => {
     res.json("Backend stuff :)");
+});
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://netflix-clone-lemon-theta.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
 });
 
 //connect to the auth routes depending on which page is visited
