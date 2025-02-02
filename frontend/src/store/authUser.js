@@ -11,12 +11,7 @@ export const useAuthStore = create((set) => ({
     signup: async (credentials) => {
         set({isSigningUp:true});
         try {
-            const response = await axios.post("https://netflix-clone-api-xi.vercel.app/api/v1/auth/signup", credentials, {
-                withCredentials: true, // Ensure cookies and auth headers are sent
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
+            const response = await axios.post("https://netflix-clone-api-xi.vercel.app/api/v1/auth/signup", credentials);
             set({user:response.data.user, isSigningUp: false});
             toast.success("Account created successfully");
         } catch (error) {
