@@ -13,20 +13,13 @@ const app = express();
 const PORT = ENV_VARS.PORT
 
 app.use(cors({
-    origin: 'https://netflix-clone-lemon-theta.vercel.app',
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    origin: ['https://netflix-clone-lemon-theta.vercel.app'],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,       //allows cookies to be enabled
-    allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
-
-app.options('*', cors());  // ✅ Handles preflight requests
-
-app.get("/", (req, res) => {
-    res.json("Backend stuff :)");
-});
 
 //connect to the auth routes depending on which page is visited
 app.use("/api/v1/auth", authRoutes);
