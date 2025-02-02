@@ -19,6 +19,8 @@ app.use(cors({
     // credentials: true,       //allows cookies to be enabled
 }));
 
+app.options('*', cors())
+
 // Explicitly handle preflight OPTIONS requests
 // app.options("*", (req, res) => {
 //     res.header("Access-Control-Allow-Origin", "https://netflix-clone-lemon-theta.vercel.app");
