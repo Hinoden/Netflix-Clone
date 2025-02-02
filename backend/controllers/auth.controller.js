@@ -4,6 +4,8 @@ import {generateTokenAndSetCookie} from '../utils/generateToken.js';
 
 export async function signup(req, res){
     try{
+        res.header("Access-Control-Allow-Origin", "https://netflix-clone-lemon-theta.vercel.app");
+        res.header("Access-Control-Allow-Credentials", "true");
         const {email, password, username} = req.body;
 
         if (!email || !password || !username){
