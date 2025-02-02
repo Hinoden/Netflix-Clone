@@ -9,14 +9,9 @@
       {
         "source": "/(.*)",
         "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "*" }
+          { "key": "Access-Control-Allow-Origin", "value": "https://netflix-clone-lemon-theta.vercel.app" },
+          { "key": "Access-Control-Allow-Credentials", "value": "true" }
         ]
-      },
-      {
-        "source": "/vercel_app_domain_name/(.*)",
-        "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "*" }
-        ]
-      }  
-  ]
+      }
+    ]
   }
