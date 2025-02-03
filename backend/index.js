@@ -15,7 +15,7 @@ const PORT = ENV_VARS.PORT
 app.use(cors({
     origin: ['https://netflix-clone-lemon-theta.vercel.app'],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure OPTIONS is allowed
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow "Content-Type"
+    allowedHeaders: ["Authorization"], // Allow "Content-Type"
     credentials: true,       //allows cookies to be enabled
 }));
 
