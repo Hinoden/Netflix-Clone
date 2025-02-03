@@ -24,6 +24,10 @@ app.options("*", cors());
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+    res.json("RAHHHHHHHHHH why you tryna look into the backend huh? Get outta here");
+});
+
 //connect to the auth routes depending on which page is visited
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/movie", protectRoute, movieRoutes);
@@ -34,3 +38,18 @@ app.listen(PORT, () => {
     console.log("Server started at http://localhost:" + PORT);
     connectDB();
 });
+
+// {
+//     "version": 2,
+//     "routes": [
+//       {
+//         "src": "/(.*)",
+//         "dest": "/",
+//         "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+//         "headers": {
+//           "Access-Control-Allow-Origin": "*",
+//           "Access-Control-Allow-Headers": "content-type"
+//         }
+//      }
+//    ]
+//   }
