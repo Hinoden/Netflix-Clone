@@ -21,6 +21,12 @@ app.use(cors({
 
 app.options("*", cors());
 
+export async function OPTIONS() {
+    return Response.json({
+      message: 'ok',
+    })
+  }
+
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
 
