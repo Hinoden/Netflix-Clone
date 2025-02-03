@@ -15,17 +15,8 @@ const PORT = ENV_VARS.PORT
 app.use(cors({
     origin: ['https://netflix-clone-lemon-theta.vercel.app'],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure OPTIONS is allowed
-    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,       //allows cookies to be enabled
 }));
-
-app.options("*", cors());
-
-export async function OPTIONS() {
-    return Response.json({
-      message: 'ok',
-    })
-  }
 
 app.use(express.json());        //allows us to parse req.body
 app.use(cookieParser());
@@ -40,3 +31,23 @@ app.listen(PORT, () => {
     console.log("Server started at http://localhost:" + PORT);
     connectDB();
 });
+
+// {
+//     "rewrites": [
+//       {
+//         "source": "/(.*)",
+//         "destination": "/"
+//       }
+//     ],
+//     "headers": [
+//       {
+//         "source": "/(.*)",
+//         "headers": [
+//           { "key": "Access-Control-Allow-Origin", "value": "https://netflix-clone-lemon-theta.vercel.app" },
+//           { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+//           { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" },
+//           { "key": "Access-Control-Allow-Credentials", "value": "true" }
+//         ]
+//       }
+//     ]
+//   }
