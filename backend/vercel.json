@@ -3,7 +3,7 @@
     "routes": [
       {
         "src": "/proxy/:match*",
-        "dest": "/:match*",
+        "dest": "https://netflix-clone-api-xi.vercel.app/:match*",
         "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
