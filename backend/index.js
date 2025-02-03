@@ -13,7 +13,7 @@ const app = express();
 const PORT = ENV_VARS.PORT
 
 app.use(cors({
-    origin: ['https://netflix-clone-actl4ukid-kristinas-projects-8c5c6242.vercel.app'],
+    origin: ['https://netflix-clone-lemon-theta.vercel.app'],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure OPTIONS is allowed
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,       //allows cookies to be enabled
