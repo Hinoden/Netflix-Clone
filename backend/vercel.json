@@ -1,17 +1,19 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/"
+  "version": 2,
+  "builds": [
+    {
+      "src": "./index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "./index.js",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://netflix-clone-lemon-theta.vercel.app"
       }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "https://netflix-clone-lemon-theta.vercel.app" },
-          { "key": "Access-Control-Allow-Credentials", "value": "true" }
-        ]
-      }
-    ]
-  }
+    }
+  ]
+}
