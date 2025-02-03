@@ -9,9 +9,10 @@ export const useAuthStore = create((set) => ({
     isLoggingOut: false,
     isLogingIn: false,
     signup: async (credentials) => {
+        console.log(import.meta.env.VITE_API_URL);
         set({isSigningUp:true});
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/auth/signup`, credentials);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/auth/signup`, credentials);
             set({user:response.data.user, isSigningUp: false});
             toast.success("Account created successfully");
         } catch (error) {
