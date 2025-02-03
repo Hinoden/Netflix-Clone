@@ -18,7 +18,7 @@ const SignUpPage = () => {
     return (
     <div className='h-screen w-full hero-bg'>
         <header className='max-w-6xl mx-auto flex items-center justify-between p-4'>
-            <Link to={"https://netflix-clone-lemon-theta.vercel.app/"}>
+            <Link to={"https://netflix-clone-actl4ukid-kristinas-projects-8c5c6242.vercel.app/"}>
                 <img src="/netflix-logo.png" alt="logo" className='w-52' />
             </Link>
         </header> 
@@ -77,7 +77,7 @@ const SignUpPage = () => {
 
                 <div className='text-center text-gray-400'>
                     Already a member?{" "}
-                    <Link to={"https://netflix-clone-lemon-theta.vercel.app/login"} className='text-red-500 hover:underline'>Sign in</Link>
+                    <Link to={"https://netflix-clone-actl4ukid-kristinas-projects-8c5c6242.vercel.app/login"} className='text-red-500 hover:underline'>Sign in</Link>
                 </div>
             </div>
         </div>
