@@ -1,18 +1,27 @@
-{  
+{
   "rewrites": [
-       { "source": "/proxy/:match*",
-         "destination": "https://netflix-clone-api-xi.vercel.app/:match*"
-       } 
- ],
-     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/",
-        "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-        "headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers": "content-type"
+    {
+      "source": "/proxy/:match*",
+      "destination": "https://netflix-clone-api-xi.vercel.app/:match*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type"
         }
-     }
-   ]
+      ]
+    }
+  ]
 }
