@@ -38,3 +38,18 @@ app.listen(PORT, () => {
     console.log("Server started at http://localhost:" + PORT);
     connectDB();
 });
+
+// {
+//     "version": 2,
+//     "routes": [
+//       {
+//         "src": "/(.*)",
+//         "dest": "/",
+//         "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+//         "headers": {
+//           "Access-Control-Allow-Origin": "*",
+//           "Access-Control-Allow-Headers": "content-type"
+//         }
+//      }
+//    ]
+//   }
