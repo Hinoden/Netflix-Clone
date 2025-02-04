@@ -1,8 +1,15 @@
 {
+  "version": 2,
   "rewrites": [
     {
       "source": "/proxy/:match*",
       "destination": "https://netflix-clone-api-xi.vercel.app/:match*"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
