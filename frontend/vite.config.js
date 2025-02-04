@@ -1,7 +1,21 @@
-// import { defineConfig } from 'vite'
-// import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// // https://vite.dev/config/
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://netflix-clone-api-xi.vercel.app",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "/api"), // Keeps "/api"
+      },
+    },
+  },
+});
+
+// https://vite.dev/config/
 // export default defineConfig({
 //   plugins: [react()],
 //   server:{
@@ -13,19 +27,19 @@
 //   }
 // })
 
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      "/proxy": {
-        target: "https://netflix-clone-api-xi.vercel.app",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/proxy/, '')
-      },
-    },
-  }
-})
+// // https://vitejs.dev/config/
+// export default defineConfig({
+//   plugins: [react()],
+//   server: {
+//     proxy: {
+//       "/proxy": {
+//         target: "https://netflix-clone-api-xi.vercel.app",
+//         changeOrigin: true,
+//         rewrite: (path) => path.replace(/^\/proxy/, '')
+//       },
+//     },
+//   }
+// })
