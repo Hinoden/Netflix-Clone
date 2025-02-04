@@ -1,7 +1,8 @@
-{  
+{
   "rewrites": [
-       { "source": "/proxy/:match*",
-         "destination": "https://netflix-clone-api-xi.vercel.app/:match*"
-       } 
- ]
+    {
+      "source": "/api/:match*",
+      "destination": "https://netflix-clone-api-xi.vercel.app/:match*"
+    }
+  ]
 }
